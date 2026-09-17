@@ -30,7 +30,7 @@ class TagsFieldTypePresenter extends FieldTypePresenter
     {
         return array_map(
             function ($tag) use ($class) {
-                return '<span class="tag ' . $class . '">' . $tag . '</span>';
+                return '<span class="tag ' . e($class) . '">' . e($tag) . '</span>';
             },
             $this->object->getValue()
         );
