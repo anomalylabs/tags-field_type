@@ -44,8 +44,8 @@ class TagsFieldTypeModifier extends FieldTypeModifier
         }
 
         try {
-            return array_filter((array)unserialize($value));
-        } catch (\Exception $e) {
+            return array_filter((array)unserialize($value, ['allowed_classes' => false]));
+        } catch (\Throwable $e) {
             return [];
         }
     }
